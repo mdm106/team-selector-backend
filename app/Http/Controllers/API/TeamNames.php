@@ -74,8 +74,12 @@ class TeamNames extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(TeamName $teamName)
     {
-        //
+        // delete the team name from the DB
+        $teamName->delete();
+
+        // use a 204 code as no content in response
+        return response(null, 204);
     }
 }
