@@ -29,7 +29,12 @@ class TeamNames extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // returns an array of all data user sent in request
+        $data = $request->all();
+
+        // creates team name with the data and stores in DB
+        // returns JSON response
+        return TeamName::create($data);
     }
 
     /**
