@@ -38,6 +38,9 @@ Route::group(["prefix" => "/team-names"], function () {
 
         // PUT /team-names/id: update the team name
         Route::put("", [TeamNames::class, "update"]);
+
+        // DELETE /team-names/id: delete the team name
+        Route::delete("", [TeamNames::class, "destroy"]);
     });
 
 });
