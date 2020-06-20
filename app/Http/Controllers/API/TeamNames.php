@@ -56,9 +56,16 @@ class TeamNames extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, TeamName $teamName)
     {
-        //
+        // get the request data
+        $data = $request->all();
+
+        // update the team name using the fill method then save in database
+        $teamName->fill($data)->save();
+
+        // return the updated version
+        return $teamName;
     }
 
     /**
