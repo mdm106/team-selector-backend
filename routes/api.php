@@ -35,6 +35,9 @@ Route::group(["prefix" => "/team-names"], function () {
     Route::group(["prefix" => "{teamName}"], function () {
         // GET /team-names/id: show the team name
         Route::get("", [TeamNames::class, "show"]);
+
+        // PUT /team-names/id: update the team name
+        Route::put("", [TeamNames::class, "update"]);
     });
 
 });
