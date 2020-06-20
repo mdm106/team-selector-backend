@@ -32,7 +32,7 @@ Route::group(["prefix" => "/team-names"], function () {
     Route::post("", [TeamNames::class, "store"]);
 
     // following routes also have a name ID in the end-point
-    Route::group(["prefix" => "{team-name}"], function () {
+    Route::group(["prefix" => "{teamName}"], function () {
         // GET /team-names/id: show the team name
         Route::get("", [TeamNames::class, "show"]);
     });
