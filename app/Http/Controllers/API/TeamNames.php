@@ -5,6 +5,9 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+//using TeamNames model
+use App\TeamName;
+
 class TeamNames extends Controller
 {
     /**
@@ -13,8 +16,9 @@ class TeamNames extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+        //get all the team names
+        return TeamName::all();
     }
 
     /**
