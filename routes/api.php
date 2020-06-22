@@ -31,6 +31,9 @@ Route::group(["prefix" => "/team-names"], function () {
     // POST /team-names: create a new team name
     Route::post("", [TeamNames::class, "store"]);
 
+    // GET /random: shows two random names
+    Route::get("/random", [TeamNames::class, "showRandom"]);
+
     // following routes also have a name ID in the end-point
     Route::group(["prefix" => "{teamName}"], function () {
         // GET /team-names/id: show the team name
