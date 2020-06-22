@@ -86,4 +86,11 @@ class TeamNames extends Controller
         // use a 204 code as no content in response
         return response(null, 204);
     }
+
+    public function showRandom()
+    {   
+        $teamNames = TeamName::orderByRaw('RAND()')->take(2)->get();
+        //get all the team names
+        return TeamNameResource::collection($teamNames);
+    }
 }
