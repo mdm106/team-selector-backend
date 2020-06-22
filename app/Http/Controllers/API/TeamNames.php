@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 //using TeamNames model
 use App\TeamName;
+//using TeamNames resource
+use App\Http\Resources\API\TeamNameResource;
 
 class TeamNames extends Controller
 {
@@ -17,8 +19,9 @@ class TeamNames extends Controller
      */
     public function index()
     {   
+        $teamNames = TeamName::all();
         //get all the team names
-        return TeamName::all();
+        return TeamNameResource::collection($teamNames);
     }
 
     /**
@@ -33,8 +36,9 @@ class TeamNames extends Controller
         $data = $request->all();
 
         // creates team name with the data and stores in DB
-        // returns JSON response
-        return TeamName::create($data);
+        $teamName = TeamName::create($data);
+        // return new teamname as resource
+        return new TeamNameResource($teamName);
     }
 
     /**
@@ -45,8 +49,8 @@ class TeamNames extends Controller
      */
     public function show(TeamName $teamName)
     {
-        // return team name with specific id
-        return $teamName;
+        // return team name with specific id using resource
+        return new TeamNameResource($teamName);
     }
 
     /**
@@ -64,8 +68,8 @@ class TeamNames extends Controller
         // update the team name using the fill method then save in database
         $teamName->fill($data)->save();
 
-        // return the updated version
-        return $teamName;
+        // return the updated version as resource
+        return new TeamNameResource($teamName);
     }
 
     /**
