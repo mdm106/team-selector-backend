@@ -21,6 +21,7 @@ class GameResource extends JsonResource
             "team_2" => $this->team_2,
             "team_1_score" => $this->team_1_score,
             "team_2_score" => $this->team_2_score,
+            "game_complete" => $this->game_complete,
         ];
     }
 }
