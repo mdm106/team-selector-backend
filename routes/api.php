@@ -3,8 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-// use TeamNames controller
+// use TeamNames and Games controllers
 use App\Http\Controllers\API\TeamNames;
+use App\Http\Controllers\API\Games;
 
 /*
 |--------------------------------------------------------------------------
