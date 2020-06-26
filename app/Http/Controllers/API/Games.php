@@ -19,7 +19,7 @@ class Games extends Controller
      */
     public function index()
     {
-        $games = Game::all();
+        $games = Game::all()->sortBy('game_date');
         //get all the games
         return GameResource::collection($games);
     }
