@@ -47,3 +47,26 @@ Route::group(["prefix" => "/team-names"], function () {
     });
 
 });
+
+Route::group(["prefix" => "/games"], function () {
+
+    // array syntax used to point to controller
+    // GET /team-names: show all games
+    Route::get("", [Games::class, "index"]);
+
+    // POST /team-names: create a new game
+    Route::post("", [Games::class, "store"]);
+
+    // following routes also have a game ID in the end-point
+    Route::group(["prefix" => "{game}"], function () {
+        // GET /games/id: show the game
+        Route::get("", [Games::class, "show"]);
+
+        // PUT /games/id: update the game
+        Route::put("", [Games::class, "update"]);
+
+        // DELETE /team-names/id: delete the team name
+        Route::delete("", [Games::class, "destroy"]);
+    });
+
+});
