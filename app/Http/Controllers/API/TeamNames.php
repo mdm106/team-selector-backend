@@ -89,7 +89,7 @@ class TeamNames extends Controller
 
     public function showRandom()
     {   
-        $teamNames = TeamName::orderByRaw('RAND()')->take(2)->get();
+        $teamNames = TeamName::all()->random(2);
         //get all the team names
         return TeamNameResource::collection($teamNames);
     }
