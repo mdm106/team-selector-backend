@@ -64,7 +64,7 @@ Request
 
 Will delete the team name at the specified id.
 
-#### Standard response for games
+### Standard response for games
 
 When requests for games are sent, the standard response will be as follows:
 
