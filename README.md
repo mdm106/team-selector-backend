@@ -6,7 +6,7 @@ The API was created using Laravel, with a Homestead database used in development
 
 # API setup
 
-The API is based on two database tables. One table contains the data for team names used to populate the team picker tool within the Team Selector App. The other table contains the date, team names and scores for football games. There are no relationships between the tables. Details of the API requests are below.
+The API is based on two database tables. One table contains the data for team names used to populate the team picker tool within the Team Selector App. The other table contains the date, team names and scores for football games. There are no relationships between the tables. Although both tables contain team names, a relationship between the tables has not been set up, as users are able to amend and add to team names during the game registration process, and these amended or new team names are not currently added to the team names table. Details of the API requests are below.
 
 ## General
 
